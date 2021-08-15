@@ -7,7 +7,7 @@ port = 1883
 
 def onMessage(client, userdata, msg):
     sleep(1)
-    print("Mensagem recebida..")
+    print("Message received..")
     print("Topic: " + str(msg.topic) + "  Message: " + str(msg.payload.decode("utf-8")))
 
 client = mqtt.Client()
