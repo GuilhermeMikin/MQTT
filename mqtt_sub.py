@@ -1,18 +1,23 @@
 import paho.mqtt.client as mqtt
 import sys
+from time import sleep
 
-broker = "127.0.0.1"
+broker_addrs = "127.0.0.1"
 port = 1883
 
 def onMessage(client, userdata, msg):
-    print(msg.topic + ": " + msg.payload.decode())
+    sleep(1)
+    print("Mensagem recebida..")
+    print("Topic: " + str(msg.topic) + "  Message: " + str(msg.payload.decode("utf-8")))
 
 client = mqtt.Client()
 client.on_message = onMessage
 
-if client.connect(broker, port, 60) != 0:
+if client.connect(broker_addrs, port, 60) != 0:
     print("Could not connect to MQTT Broker!")
     sys.exit(-1)
+else:
+    print("Client connected..")
 
 client.subscribe("test/status")
 
