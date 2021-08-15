@@ -1,2 +1,2 @@
 # MQTT
- Primeiro projeto trabalhando o protocolo MQTT
+ Exemplo de projeto pub/sub do protocolo MQTT
