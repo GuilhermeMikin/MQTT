@@ -2,28 +2,36 @@ import paho.mqtt.client as mqtt
 import sys
 from time import sleep
 
-broker_addrs = "127.0.0.1"
-port = 1883
+print('-' * 100)
+print('Welcome to paho-MQTT_Subscriber!!'.center(100))
+
+# broker_addrs = "3.134.40.193"
+# port = 1883
+broker_addrs = input('\nPlease, enter the MQTT Broker Host: ')
+port = int(input('Enter the Port: '))
+
 
 def onMessage(client, userdata, msg):
     sleep(1)
-    print("Message received..")
-    print("Topic: " + str(msg.topic) + "  Message: " + str(msg.payload.decode("utf-8")))
+    # print("Message received...")
+    # print("Topic: " + str(msg.topic) + " Message: " + str(msg.payload.decode("utf-8")))
+    print(str(msg.payload.decode("utf-8")))
 
 client = mqtt.Client()
 client.on_message = onMessage
-
-if client.connect(broker_addrs, port, 60) != 0:
-    print("Could not connect to MQTT Broker!")
+if client.connect(broker_addrs, port, 60) !=0:
+    print("\nCould not connect to MQTT Broker!")
     sys.exit(-1)
 else:
-    print("Client connected..")
+    print("\nClient connected...")
 
-client.subscribe("test/status")
+topic = input('\nSubscribe to topic: ')
+client.subscribe(topic)
 
 try:
-    print("Press CTRL+C to exit...")
+    print("\nSuccessfully Subscribed! Press CTRL+C to exit...\n")
     client.loop_forever()
 except:
-    print("Disconnecting from broker")
+    print("\nDisconnecting from broker...\n")
+
 client.disconnect()
