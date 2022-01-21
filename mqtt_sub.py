@@ -7,7 +7,11 @@ print('Welcome to paho-MQTT_Subscriber!!'.center(100))
 
 # broker_addrs = "3.134.40.193"
 # port = 1883
-broker_addrs = input('\nPlease, enter the MQTT Broker Host: ')
+mqtt_broker = input('\nPlease, enter the MQTT Broker Host: ')
+if mqtt_broker == "aws":
+    broker_addrs = "3.134.40.193"
+else:
+    broker_addrs = mqtt_broker
 port = int(input('Enter the Port: '))
 
 
