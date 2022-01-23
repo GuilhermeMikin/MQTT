@@ -13,7 +13,7 @@ key = ""
 
 client = mqtt.Client()
 
-if client.connect(iot_endpoint, 8883, 60) != 0:
+if client.connect("3.134.40.193", 1883, 60) != 0:
     print("Could not connect to MQTT Broker!")
     sys.exit(-1)
 
