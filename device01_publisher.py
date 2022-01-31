@@ -1,7 +1,7 @@
 from time import sleep
 import AWSIoTPythonSDK.MQTTLib as AWSIoTPyMQTT
 
-endpoint = "ax7j1tokadxlb-ats.iot.us-east-2.amazonaws.com"
+endpoint = "a2agzq0m7iu93l-ats.iot.us-east-2.amazonaws.com"
 client_id = "device01"
 path_certificate = "D:\\AWS\\device01\\bbca1c3ef41424274a1576e916c2e4892fbaec4dfc06f3cf9fb289902c38470a-certificate.pem.crt"
 path_privatekey = "D:\\AWS\\device01\\bbca1c3ef41424274a1576e916c2e4892fbaec4dfc06f3cf9fb289902c38470a-private.pem.key"
