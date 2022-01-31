@@ -7,21 +7,21 @@ path_certificate = "D:\\AWS\\device01\\bbca1c3ef41424274a1576e916c2e4892fbaec4df
 path_privatekey = "D:\\AWS\\device01\\bbca1c3ef41424274a1576e916c2e4892fbaec4dfc06f3cf9fb289902c38470a-private.pem.key"
 path_rootca1 = "D:\\AWS\\device01\\AmazonRootCA1.pem"
 
-myAWSIoTMQTTClient = AWSIoTPyMQTT.AWSIoTMQTTClient(client_id)
-myAWSIoTMQTTClient.configureEndpoint(endpoint, 8883)
-myAWSIoTMQTTClient.configureCredentials(path_rootca1, path_privatekey, path_certificate)
+my_awsmqtt_client = AWSIoTPyMQTT.AWSIoTMQTTClient(client_id)
+my_awsmqtt_client.configureEndpoint(endpoint, 8883)
+my_awsmqtt_client.configureCredentials(path_rootca1, path_privatekey, path_certificate)
 
-myAWSIoTMQTTClient.connect()
+my_awsmqtt_client.connect()
 
 topic = "test/status"
-message = "Hello World"
+msg = "Hello World"
 
 print('Inicio de publicação')
 
 for i in range(5):
-    myAWSIoTMQTTClient.publish(topic, message, 1) 
-    print(f"Publicação 0{i+1}: {message} ao tópico [{topic}]")
+    my_awsmqtt_client.publish(topic, msg, 1) 
+    print(f"Publicação 0{i+1}: {msg} ao tópico [{topic}]")
     sleep(0.5)
 
 print('Fim de publicação')
-myAWSIoTMQTTClient.disconnect()
+my_awsmqtt_client.disconnect()
