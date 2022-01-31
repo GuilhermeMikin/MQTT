@@ -12,21 +12,21 @@ myAWSIoTMQTTClient.configureCredentials(path_rootca1, path_privatekey, path_cert
 
 print('-' * 100)
 print('MQTT Subscriber'.center(100))
-topic = input('\nSubscribe to topic: ')
+topic = input('\nInscrever-se no tópico: ')
 
 myAWSIoTMQTTClient.connect()
-print('Begin Subscription \n')
+print('Inicio de Inscrição \n')
 
 
 def customCallback(client, userdata, message):
     print(message.payload.decode("utf-8"))
 
 myAWSIoTMQTTClient.subscribe(topic, 1, customCallback)
-print('\nSuccessfully Subscribed! Press Enter to exit...\n')
+print(f'\nInscrito com sucesso no tópico [{topic}]! Pressione Enter para sair...\n')
 x = input()
 
 myAWSIoTMQTTClient.unsubscribe(topic)
-print("Client unsubscribed") 
+print("Cliente não mais inscrito...") 
 
 myAWSIoTMQTTClient.disconnect()
-print("Client Disconnected")
+print("Cliente desconectado!")
