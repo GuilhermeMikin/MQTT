@@ -19,7 +19,7 @@ def customCallback(client, userdata, message):
     print(message.payload.decode("utf-8"))
 myAWSIoTMQTTClient.subscribe(TOPIC, 1, customCallback)
 
-print('waiting for the callback. Click to conntinue...')
+print('Waiting for the callback. Click to conntinue...')
 x = input()
 
 myAWSIoTMQTTClient.unsubscribe(TOPIC)
