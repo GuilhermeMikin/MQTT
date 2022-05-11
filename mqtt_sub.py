@@ -16,7 +16,6 @@ port = int(input('Enter the Port: '))
 
 
 def onMessage(client, userdata, msg):
-    sleep(1)
     # print("Message received...")
     # print("Topic: " + str(msg.topic) + " Message: " + str(msg.payload.decode("utf-8")))
     print(str(msg.payload.decode("utf-8")))
