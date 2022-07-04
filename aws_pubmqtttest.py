@@ -2,14 +2,14 @@ import time as t
 import json
 import AWSIoTPythonSDK.MQTTLib as AWSIoTPyMQTT
 
-ENDPOINT = "ax7j1tokadxlb-ats.iot.us-east-2.amazonaws.com"
+ENDPOINT = "a14esw6xzioxj2-ats.iot.us-east-1.amazonaws.com"
 CLIENT_ID = "testDevice"
-PATH_TO_CERTIFICATE = "D:\\AWS\\thingtest\\31d8a33563-certificate.pem.crt"
-PATH_TO_PRIVATE_KEY = "D:\\AWS\\thingtest\\31d8a33563-private.pem.key"
-PATH_TO_AMAZON_ROOT_CA_1 = "D:\\AWS\\thingtest\\AmazonRootCA1.pem.txt"
+PATH_TO_CERTIFICATE = "D:\\AWS\\esteira_certs\\esteiraic-certificate.pem.crt"
+PATH_TO_PRIVATE_KEY = "D:\\AWS\\esteira_certs\\esteiraic-private.pem.key"
+PATH_TO_AMAZON_ROOT_CA_1 = "D:\\AWS\\esteira_certs\\AmazonRootCA1.pem"
 MESSAGE = "Ok.. now we're talking heheh"
 TOPIC = "test/status"
-RANGE = 20
+RANGE = 5
 
 myAWSIoTMQTTClient = AWSIoTPyMQTT.AWSIoTMQTTClient(CLIENT_ID)
 myAWSIoTMQTTClient.configureEndpoint(ENDPOINT, 8883)

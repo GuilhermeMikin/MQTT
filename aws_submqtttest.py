@@ -1,11 +1,11 @@
 import time as t
 import AWSIoTPythonSDK.MQTTLib as AWSIoTPyMQTT
 
-ENDPOINT = "ax7j1tokadxlb-ats.iot.us-east-2.amazonaws.com"
+ENDPOINT = "a14esw6xzioxj2-ats.iot.us-east-1.amazonaws.com"
 CLIENT_ID = "testDevice"
-PATH_TO_CERTIFICATE = "D:\\AWS\\thingtest\\31d8a33563-certificate.pem.crt"
-PATH_TO_PRIVATE_KEY = "D:\\AWS\\thingtest\\31d8a33563-private.pem.key"
-PATH_TO_AMAZON_ROOT_CA_1 = "D:\\AWS\\thingtest\\AmazonRootCA1.pem.txt"
+PATH_TO_CERTIFICATE = "D:\\Eng_Cont_Aut\\4 - Ini_Cientifica\\EnergyEfficiency4.0\\ESTEIRA\\aws\\esteiraic-certificate.pem.crt"
+PATH_TO_PRIVATE_KEY = "D:\\Eng_Cont_Aut\\4 - Ini_Cientifica\\EnergyEfficiency4.0\\ESTEIRA\\aws\\esteiraic-private.pem.key"
+PATH_TO_AMAZON_ROOT_CA_1 = "D:\\Eng_Cont_Aut\\4 - Ini_Cientifica\\EnergyEfficiency4.0\\ESTEIRA\\aws\\AmazonRootCA1.pem"
 TOPIC = "test/status"
 
 myAWSIoTMQTTClient = AWSIoTPyMQTT.AWSIoTMQTTClient(CLIENT_ID)
